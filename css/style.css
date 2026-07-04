@@ -1,0 +1,377 @@
+html, body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("/assets/images/studioghibli.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 80px 20fr 1fr;
+    grid-template-areas: 
+        "navbar"
+        "content"
+        "footer";
+}
+
+#navbar {
+    /* background-color: grey; */
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "nav-left nav-right";
+}
+
+#icon {
+    grid-area: nav-left;
+    width: 40px;
+    padding: 2% 0 0 2%;
+    filter: invert();
+}
+
+#menuContainer {
+    grid-area: nav-right;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: right;
+}
+#menu {
+    color: white;
+    margin: 1% 3% 0 0;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+#contents {
+    /* background-color: black; */
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 0.8fr 2fr 0.4fr;
+    grid-template-areas: 
+        "leftSide center rightSide";
+}
+
+#leftSide {
+    grid-area: leftSide;
+    /* background-color:aqua; */
+    /* opacity: 0.5; */
+
+    display: grid;
+    grid-template-rows: 0.4fr 1fr;
+    grid-template-areas: 
+        "motiveText"
+        "todolist";
+}
+
+#motiveText {
+    grid-area: motiveText;
+    /* background-color:tomato; */
+    padding: 25% 0 0 15%;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke: 1px rgba(67, 67, 67, 0.2);
+    font-family: "Schoolbell", cursive;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+#todolistSpace {
+    grid-area: todolist;
+    /* background-color:wheat; */
+    display: flex;
+    justify-content: center;
+}
+
+#todolistContainer {
+    height: 50%;
+    width: 70%;
+    background-color:teal;
+    padding: 0 0 0 0;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem;
+    border-radius: 16px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+#todolistTitle {
+    text-shadow: 0 2px 8px rgba(12, 26, 17, 0.3);
+    letter-spacing: 3px;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
+}
+
+#task {
+    margin-top: 5%;
+    font-size: 16px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 5px;
+    width: 60%;
+    /* font-size: larger; */
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    outline: none;
+    text-align: center;
+}
+
+#task:focus {
+    padding-left: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    outline: none;
+    border-bottom: 2px solid white;
+    transition: border-bottom 0.3s ease;
+}
+
+#taskAddBtn {
+    padding: 2px 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+#taskAddBtn:hover {
+    transform: scale(1.1);
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#tasklist {
+    width: 40px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    transition: border-color 0.2s ease;
+    position: relative;
+    border-bottom: none;
+}
+
+
+li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 30px;   /* leave 30px of space on the right */
+    bottom: 0;
+    height: 1px;
+    background: transparent;
+    transition: background-color 0.2s ease;
+}
+
+li:hover::after {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.2s ease;
+}
+
+.delete-btn:hover {
+    color: red;
+}
+
+#center {
+    grid-area: center;
+    /* background-color:blueviolet; */
+    /* opacity: 0.5; */
+    display: flex;
+}
+
+#timerContainer {
+    border: 1px solid white;
+    border-radius: 10%;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.12);
+    width: 35%;
+    height: 55%;
+    /* background-color:crimson; */
+    margin: 15% 0 0 45%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 10% 25% 1fr;
+    grid-template-areas:
+        "timer"
+        "session"
+        "buttons"
+        "ongoingTask";
+}
+
+#timer {
+    grid-area: timer;
+    font-size: 90px;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    padding-top: 20%;
+    margin-bottom: 0;
+    text-shadow: 0 2px 8px rgba(12, 26, 17, 0.3);
+    letter-spacing: 5px;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    /* background-color:aqua; */
+
+}
+
+#quote {
+    grid-area: session;
+    font-size: 18px;
+    margin-bottom: 0;
+    padding-top: 2%;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 8px rgba(12, 26, 17, 0.3);
+    font-family: "Sour Gummy", sans-serif;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+
+    /* background-color: blue; */
+}
+
+#buttons {
+    grid-area: buttons;
+    /* background-color: brown; */
+    margin-bottom: 0;
+    padding-top: 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#startBtn {
+    color: black;
+    font-size: 16px;
+    padding: 2px 2px 5px 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    background: white;
+    transition: transform 0.3s ease;
+    border: 0;
+    margin: 0 20px;
+}
+
+#startBtn:hover {
+    transform: scale(1.1);
+    background: black;
+    color: white;
+    border: 0;
+}
+
+#stopBtn {
+    color: black;
+    font-size: 16px;
+    padding: 2px 2px 5px 2px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    background: white;
+    transition: transform 0.3s ease;
+    border: 0;
+    margin: 0 20px;
+}
+
+#stopBtn:hover {
+    transform: scale(1.1);
+    background: black;
+    color: white;
+    border: 0;
+}
+
+#resetBtn {
+    color: black;
+    font-size: 16px;
+    padding: 2px 2px 5px 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    background: white;
+    transition: transform 0.3s ease;
+    border: 0;
+    margin: 0 20px;
+}
+
+#resetBtn:hover {
+    transform: scale(1.1);
+    background: black;
+    color: white;
+    border: 0;
+}
+
+#ongoingTask {
+    grid-area: ongoingTask;
+    margin-top: 0;
+    color: rgba(0, 0, 0, 0.7);
+    animation:
+        glow 2.5s ease-in-out infinite,
+        float 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%,100% {
+        text-shadow:
+            0 0 8px rgba(255,255,255,.4);
+    }
+
+    50% {
+        text-shadow:
+            0 0 18px rgba(255,255,180,.9),
+            0 0 30px rgba(255,255,180,.5);
+    }
+}
+
+
+@keyframes float {
+
+    0%,100%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-5px);
+    }
+}
+
+#rightSide {
+    grid-area: rightSide;
+    /* background-color:yellow; */
+    /* opacity: 0.5; */
+}
+
+#footer {
+    /* background-color: green; */
+    grid-area: footer;
+}

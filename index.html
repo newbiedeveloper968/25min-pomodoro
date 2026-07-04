@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
+    <title>25min Pomodoro</title>
+</head>
+<body>
+    <div id="navbar">
+        <img src="/assets/images/image-removebg-preview.png" id="icon">
+
+        <div id="menuContainer">
+            <a href="" id="menu">&#8801;</a>
+        </div>
+    </div>
+
+    <div id="contents">
+        <div id="leftSide">
+            <div id="motiveText">Gambare Gambare <span id="username"></span>!</div>
+            <div id="todolistSpace">
+                <div id="todolistContainer">
+                    <div id="todolistTitle">TODO LIST</div>
+                    <input type="text" id="task" placeholder="New Task">
+                    <button onclick="addTask()" id="taskAddBtn">+</button>
+                    
+                    <div id="taskList">
+                        <ul id="list"></ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="center">
+            <div id="timerContainer">
+                
+                <div id="timer">25:00</div>
+
+                <div id="quote"></div>
+
+                <div id="buttons">
+                    <button id="startBtn" onclick="startTimer()">▶</button>
+                    <button id="stopBtn" onclick="stopTimer()">⏹</button>
+                    <button id="resetBtn" onclick="resetTimer()">⟳</button>
+                </div>
+
+                <p id="ongoingTask">Select a Task</p>
+
+            </div>
+        </div>
+
+
+        <div id="rightSide"></div>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>
