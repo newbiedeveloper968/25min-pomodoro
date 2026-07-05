@@ -388,12 +388,17 @@ li:hover::after {
         display: flex;
         flex-direction: column;
     }
+    
+    #icon{
+        padding: 5% 0 0 5%;
+        width: 18%;
+    }
 
     #contents {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     #leftSide,
@@ -403,7 +408,7 @@ li:hover::after {
     }
 
     #timerContainer {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         height: auto;
         padding: 2rem 0;
@@ -415,14 +420,14 @@ li:hover::after {
     }
 
     #todolistContainer {
-        width: 90%;
+        width: auto;
         height: auto;
     }
 
     #motiveText {
         padding: 1rem;
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     #buttons {
@@ -433,6 +438,10 @@ li:hover::after {
     #stopBtn,
     #resetBtn {
         margin: 0;
+    }
+
+    #ongoingTask {
+        margin-top: 15%;
     }
 
 }
